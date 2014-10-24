@@ -1,0 +1,17 @@
+#!/bin/bash
+
+tmux selectp -t 0
+tmux splitw -h -p 50
+tmux selectp -t 0
+tmux splitw -v -p 50
+tmux selectp -t 2
+tmux splitw -v -p 50
+tmux selectp -t 0
+
+cmd="cd $HOME && clear"
+
+tmux send-keys -t 0 "$cmd" C-m
+tmux send-keys -t 1 "$cmd" C-m
+tmux send-keys -t 2 "$cmd" C-m
+tmux send-keys -t 3 "$cmd" C-m
+
